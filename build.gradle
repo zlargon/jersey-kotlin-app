@@ -4,29 +4,29 @@
 
 plugins {
     id 'java'
-    id 'maven'
+    id 'application'
 }
 
 repositories {
-    mavenLocal()
-    maven {
-        url = 'http://repo.maven.apache.org/maven2'
-    }
+    jcenter()
 }
 
 dependencies {
-    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.27'
-    compile 'org.glassfish.jersey.inject:jersey-hk2:2.27'
-    testCompile 'org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-bundle:2.27'
-    providedCompile 'org.eclipse.jetty:jetty-servlet:9.0.6.v20130930'
-    providedCompile 'org.eclipse.jetty:jetty-webapp:9.0.6.v20130930'
+    def jersey_version = '2.27'
+    def jetty_version = '9.0.6.v20130930'
+
+    implementation "org.glassfish.jersey.containers:jersey-container-servlet:$jersey_version"
+    implementation "org.glassfish.jersey.inject:jersey-hk2:$jersey_version"
+    implementation "org.eclipse.jetty:jetty-servlet:$jetty_version"
+    implementation "org.eclipse.jetty:jetty-webapp:$jetty_version"
+    testImplementation "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-bundle:$jersey_version"
 }
 
 group = 'com.zlargon'
 version = '0.0.1'
 description = 'jersey-kotlin'
-sourceCompatibility = '1.7'
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+mainClassName = 'com.zlargon.heroku.Main'
