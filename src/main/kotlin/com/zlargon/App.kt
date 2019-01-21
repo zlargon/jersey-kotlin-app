@@ -33,6 +33,13 @@ object App {
         server.handler = root
 
         server.start()
+
+        println("""
+    ===================================================
+    Start Server at http://localhost:$webPort/
+    ===================================================
+    """)
+
         server.join()
     }
 }
