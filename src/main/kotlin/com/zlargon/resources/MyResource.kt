@@ -1,4 +1,4 @@
-package com.zlargon
+package com.zlargon.resources
 
 import javax.ws.rs.GET
 import javax.ws.rs.Path
@@ -17,8 +17,9 @@ class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-    val it: String
-        @GET
-        @Produces(MediaType.TEXT_PLAIN)
-        get() = "Hello, Heroku!"
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    fun getIt(): String {
+        return "Hello, Jersey!"
+    }
 }

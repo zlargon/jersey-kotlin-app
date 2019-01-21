@@ -1,4 +1,4 @@
-package com.zlargon
+package com.zlargon.resources
 
 import javax.ws.rs.core.Application
 
@@ -7,8 +7,6 @@ import org.glassfish.jersey.test.JerseyTest
 
 import org.junit.Test
 import org.junit.Assert.assertEquals
-
-import com.zlargon.MyResource
 
 class MyResourceTest : JerseyTest() {
 
@@ -23,6 +21,6 @@ class MyResourceTest : JerseyTest() {
     fun testGetIt() {
         val responseMsg = target().path("myresource").request().get(String::class.java)
 
-        assertEquals("Hello, Heroku!", responseMsg)
+        assertEquals("Hello, Jersey!", responseMsg)
     }
 }

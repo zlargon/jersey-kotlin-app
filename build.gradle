@@ -44,4 +44,4 @@ sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 // code start point
-mainClassName = 'com.zlargon.heroku.Main'
+mainClassName = 'com.zlargon.App'
